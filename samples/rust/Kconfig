@@ -10,6 +10,16 @@ menuconfig SAMPLES_RUST
 
 if SAMPLES_RUST
 
+config SAMPLE_RUST_VDEV
+	tristate "Virtual Device"
+	help
+	  This option builds the Rust virtual device module sample.
+
+	  To compile this as a module, choose M here:
+	  the module will be called rust_vdev.
+
+	  If unsure, say N.
+
 config SAMPLE_RUST_MINIMAL
 	tristate "Minimal"
 	help
