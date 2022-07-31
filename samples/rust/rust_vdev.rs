@@ -14,6 +14,7 @@ impl kernel::Module for VDev {
         // Print a banner to make sure our moudle is working
         pr_info!("-----------------------\n");
         pr_info!("initialize vdev module!\n");
+        pr_info!("watching for changes...\n");
         pr_info!("-----------------------\n");
         Ok(VDev)
     }
