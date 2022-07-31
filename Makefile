@@ -1805,11 +1805,11 @@ $(DOC_TARGETS):
 # ---------------------------------------------------------------------------
 PHONY += rustwatch
 rustwatch:
-	$(Q) cargo watch -w ./samples/rust/rust_vdev.rs -cs 'make && qemu-system-x86_64 -nographic -kernel vmlinux -initrd initrd.img -nic user,model=rtl8139,hostfwd=tcp::5555-:23'
+	$(Q) cargo watch -w ./samples/rust/rust_vdev.rs -cs 'make && qemu-system-x86_64 -append "vdev.devices=4" -nographic -kernel vmlinux -initrd initrd.img -nic user,model=rtl8139,hostfwd=tcp::5555-:23'
 
 PHONY += rustvm
 rustvm:
-	$(Q) make && qemu-system-x86_64 -nographic -kernel vmlinux -initrd initrd.img -nic user,model=rtl8139,hostfwd=tcp::5555-:23
+	$(Q) make && qemu-system-x86_64 -append "vdev.devices=4" -nographic -kernel vmlinux -initrd initrd.img -nic user,model=rtl8139,hostfwd=tcp::5555-:23
 
 # "Is Rust available?" target
 PHONY += rustavailable
